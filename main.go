@@ -10,7 +10,7 @@ import (
 func main() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		var out bytes.Buffer
-		cmd := exec.Command("curl", "ifconfig.me")
+		cmd := exec.Command("curl", "api.ipify.org")
 		cmd.Stdout = &out
 		err := cmd.Run()
 		if err != nil {
